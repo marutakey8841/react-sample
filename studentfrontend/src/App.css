@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  background-image: url(https://free-texture.net/wp-content/uploads/CorkBoard02.jpg);
 }
 
 .App-logo {
@@ -36,3 +37,8 @@
     transform: rotate(360deg);
   }
 }
+
+.register {
+  background-color: whitesmoke;
+}
+
