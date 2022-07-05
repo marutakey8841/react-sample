@@ -10,7 +10,7 @@ import { Button } from '@mui/material';
 export default function Appbar() {
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static" color=''> 
+      <AppBar position="static" color='default'> 
         <Toolbar variant="dense">
           <IconButton edge="start" color="inherit" aria-label="menu" sx={{ mr: 2 }}>
             <MenuIcon />
