@@ -27,11 +27,11 @@ margin: '5px',
 const Register = () => {
     const [questions,setQuestions] = useContext(QuestionContext);
     const navigate = useNavigate();
-    const [answers,setAnswers] = useContext(AnswerContext);
+    //const [answers,setAnswers] = useContext(AnswerContext);
     const today = new Date;
     const newQuestion = {questionId:0,questionDate:'',questionTitle:'',questionContent:'',questionRecommendation: "0",
     questionViews: "0"};
-    const newAnswer =  {id:0,answer:''};
+    //const newAnswer =  {id:0,answer:''};
 
     const updataWebApi = async() => {
       const fetchOptions ={
@@ -41,7 +41,7 @@ const Register = () => {
       };
 
       const response = await window.fetch(
-          "http://localhost:8080/spring-boot-aks/question/findall",
+        'http://localhost:8080/spring-boot-aks/question/findall',
           fetchOptions
       );
 
@@ -55,9 +55,9 @@ const Register = () => {
     const handleAddClick = () => {
         newQuestion.questionDate = today.getFullYear() + "-" +  (today.getMonth() + 1 )+ "-"+ ('0' + today.getDate()).slice(-2)
         newQuestion.questionId = questions.length + 1;
-        newAnswer.questionId = questions.length + 1
+        //newAnswer.questionId = questions.length + 1
         setQuestions([...questions, newQuestion]);
-        setAnswers([...answers,[newAnswer]])
+        //setAnswers([...answers,[newAnswer]])
         updataWebApi();
         navigate('/UnsolvedQuestion');
     };

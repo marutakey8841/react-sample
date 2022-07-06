@@ -22,18 +22,17 @@ export const AnswerContext = React.createContext();
 const questionList = [
 ]
 
-const answerList = [[{id:0,answer:'',questionId:1}
+// const answerList = [[
+// ]
+// ];
 
-]
-];
 
-console.log(answerList);
 
 
 
 function App() {
   const [questions,setQuestions] = useState([]);
-  const [answers,setAnswers] = useState(answerList);
+  //const [answers,setAnswers] = useState(answerList);
   useEffect(() => {
     // WebAPIよりデータをGETする。
     const fetchData = async () => {
@@ -61,7 +60,7 @@ function App() {
   console.log(questions)
 
   return (
-    <AnswerContext.Provider value = { [answers,setAnswers]}>
+    //<AnswerContext.Provider value = { [answers,setAnswers]}>
       <QuestionContext.Provider value = {[questions,setQuestions]}>
         <BrowserRouter>
           <Routes>
@@ -76,7 +75,7 @@ function App() {
           </Routes>
         </BrowserRouter>
       </QuestionContext.Provider>
-    </AnswerContext.Provider>
+    //</AnswerContext.Provider>
   );
 }
 
