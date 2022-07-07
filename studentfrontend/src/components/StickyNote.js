@@ -35,6 +35,7 @@ export const StickyNote = (props) => {
       <div class="center">
         <img src='https://frame-illust.com/fi/wp-content/uploads/2015/01/6ebb4091a951c8bd25ba696145f68148.png'></img>
         <h3>{props.title}</h3>
+        <h5>{props.content}</h5>
       </div>
       <div class="center">
         <AnswerForm questionId = {props.questionId}/>

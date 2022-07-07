@@ -29,8 +29,8 @@ const Register = () => {
     const navigate = useNavigate();
     //const [answers,setAnswers] = useContext(AnswerContext);
     const today = new Date;
-    const newQuestion = {questionId:0,questionDate:'',questionTitle:'',questionContent:'',questionRecommendation: "0",
-    questionViews: "0"};
+    const newQuestion = {questionTitle:'',questionContent:'',questionDate:'',questionRecommendation: 0,
+    questionViews:0,memberId:0,categoryId:0};
     //const newAnswer =  {id:0,answer:''};
 
     const updataWebApi = async() => {
@@ -41,12 +41,12 @@ const Register = () => {
       };
 
       const response = await window.fetch(
-        'http://localhost:8080/spring-boot-aks/question/findall',
+        'http://localhost:8080/spring-boot-aks/question/insert',
           fetchOptions
       );
 
       if(!response.ok) throw new Error(`Fetch Error...${response.status}`);
-      window.alert('新しい質問を登録しました。');
+      window.alert('質問を投稿しました。');
       }
 
     const handleQuestionChange = (event) => {
@@ -54,7 +54,7 @@ const Register = () => {
     };
     const handleAddClick = () => {
         newQuestion.questionDate = today.getFullYear() + "-" +  (today.getMonth() + 1 )+ "-"+ ('0' + today.getDate()).slice(-2)
-        newQuestion.questionId = questions.length + 1;
+        //newQuestion.questionId = questions.length + 1;
         //newAnswer.questionId = questions.length + 1
         setQuestions([...questions, newQuestion]);
         //setAnswers([...answers,[newAnswer]])

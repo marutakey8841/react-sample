@@ -38,7 +38,7 @@ function App() {
     const fetchData = async () => {
       try {
         // WebAPIにアクセスしてレスポンスを得る
-        const response = await window.fetch('http://localhost:8080/spring-boot-aks/question/findall',{
+        const response = await window.fetch('http://localhost:8080/spring-boot-aks/question/list',{
           headers: {
           'Content-Type': 'application/json',
         }});
